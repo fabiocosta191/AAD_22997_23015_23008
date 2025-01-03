@@ -19,9 +19,9 @@ namespace AAD_22997_23015_23008
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            // Carregar os dados ao carregar o formulário (opcional)
-            CarregarDados();
+
         }
+
 
         // Eventos dos botões para atualizar o painel
         private void button1_Click(object sender, EventArgs e)
@@ -31,9 +31,10 @@ namespace AAD_22997_23015_23008
             panel4.Visible = false;
             panel5.Visible = false;
             panel1.Visible = true;
+            CarregarDados1();
         }
 
-        private void CarregarDados()
+        private void CarregarDados1()
         {
             // Conexão com o SQL Server
             string connectionString = "Data Source=ASUS-FC;Initial Catalog=AAD-22997-23008-23015;Integrated Security=True;";
@@ -77,9 +78,10 @@ namespace AAD_22997_23015_23008
                 string clientName = txtClientName.Text;
                 string clientNIF = txtClientNIF.Text;
                 string clientAddress = txtClientAddress.Text;
+                string clientcp = txtCodPostal.Text;
 
                 // Inserir Cliente e recuperar o ID gerado
-                int clientId = InsertClient(clientName, clientNIF, clientAddress);
+                int clientId = InsertClient(clientName, clientNIF, clientAddress, clientcp);
 
                 // Inserir Contactos
                 foreach (var contact in lstContacts.Items)
@@ -99,23 +101,35 @@ namespace AAD_22997_23015_23008
             }
         }
 
-        private int InsertClient(string name, string nif, string address)
+        private int InsertClient(string name, string nif, string address, string cp)
         {
-            string connectionString = "Data Source=ASUS-FC;Initial Catalog=teste;Integrated Security=True;";
+            // Defina a string de conexão com o banco de dados correto
+            string connectionString = "Data Source=ASUS-FC;Initial Catalog=AAD-22997-23008-23015;Integrated Security=True;";
 
-            string query = "INSERT INTO Cliente (Name, NIF, Address) OUTPUT INSERTED.ClientId VALUES (@Name, @NIF, @Address);";
+            // Defina a consulta SQL corrigida
+            string query = "INSERT INTO Cliente (NomeCliente, NIFCliente, RuaCliente, CodigoPostalCP) OUTPUT INSERTED.IDCliente VALUES (@Name, @NIF, @Address, @Cp);";
+
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 SqlCommand command = new SqlCommand(query, connection);
+
+                // Adiciona os parâmetros com os valores passados
                 command.Parameters.AddWithValue("@Name", name);
                 command.Parameters.AddWithValue("@NIF", nif);
                 command.Parameters.AddWithValue("@Address", address);
+                command.Parameters.AddWithValue("@Cp", cp);
 
+
+                
+                // Abre a conexão e executa a consulta
                 connection.Open();
-                int clientId = (int)command.ExecuteScalar(); // Retorna o ID gerado do cliente
+
+                // Retorna o ID gerado após a inserção
+                int clientId = (int)command.ExecuteScalar();  // OUTPUT INSERTED.IDCliente retorna o ID gerado
                 return clientId;
             }
         }
+
 
         private void InsertContact(int clientId, string contactType, string contactNumber)
         {
@@ -160,11 +174,14 @@ namespace AAD_22997_23015_23008
         {
             txtClientName.Clear();
             txtClientNIF.Clear();
+            txtCodPostal.Clear();
             txtClientAddress.Clear();
             txtTipoContato.Clear();
             txtNumeroContato.Clear();
             lstContacts.Items.Clear();
         }
+
+
 
         //-----------------------------------------------------
         private void button2_Click(object sender, EventArgs e)
@@ -207,7 +224,14 @@ namespace AAD_22997_23015_23008
             // Fecha o formulário principal
             this.Close();
         }
-
+        private void button7_Click(object sender, EventArgs e)
+        {
+            panel2.Visible = false;
+            panel3.Visible = false;
+            panel4.Visible = false;
+            panel5.Visible = false;
+            panel1.Visible = false;
+        }
 
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -230,15 +254,6 @@ namespace AAD_22997_23015_23008
 
         }
 
-        private void button7_Click(object sender, EventArgs e)
-        {
-            panel2.Visible = false;
-            panel3.Visible = false;
-            panel4.Visible = false;
-            panel5.Visible = false;
-            panel1.Visible = false;
-        }
-
         private void panel3_Paint(object sender, PaintEventArgs e)
         {
 
@@ -253,5 +268,6 @@ namespace AAD_22997_23015_23008
         {
 
         }
+
     }
 }

@@ -37,6 +37,16 @@
             this.button6 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnAddContact = new System.Windows.Forms.Button();
+            this.lstContacts = new System.Windows.Forms.ListBox();
+            this.btnSaveClientAndContacts = new System.Windows.Forms.Button();
+            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.txtClientNIF = new System.Windows.Forms.TextBox();
+            this.txtNumeroContato = new System.Windows.Forms.TextBox();
+            this.txtClientAddress = new System.Windows.Forms.TextBox();
+            this.txtTipoContato = new System.Windows.Forms.TextBox();
+            this.txtClientName = new System.Windows.Forms.TextBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -54,18 +64,10 @@
             this.label4 = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.dataGridView5 = new System.Windows.Forms.DataGridView();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.txtClientName = new System.Windows.Forms.TextBox();
-            this.txtTipoContato = new System.Windows.Forms.TextBox();
-            this.txtClientAddress = new System.Windows.Forms.TextBox();
-            this.txtNumeroContato = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.txtClientNIF = new System.Windows.Forms.TextBox();
-            this.btnSaveClientAndContacts = new System.Windows.Forms.Button();
-            this.lstContacts = new System.Windows.Forms.ListBox();
-            this.btnAddContact = new System.Windows.Forms.Button();
+            this.txtCodPostal = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.panel3.SuspendLayout();
@@ -74,7 +76,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -172,6 +173,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel1.Controls.Add(this.txtCodPostal);
             this.panel1.Controls.Add(this.btnAddContact);
             this.panel1.Controls.Add(this.lstContacts);
             this.panel1.Controls.Add(this.btnSaveClientAndContacts);
@@ -187,6 +189,94 @@
             this.panel1.Size = new System.Drawing.Size(804, 550);
             this.panel1.TabIndex = 13;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint_1);
+            // 
+            // btnAddContact
+            // 
+            this.btnAddContact.Location = new System.Drawing.Point(680, 301);
+            this.btnAddContact.Name = "btnAddContact";
+            this.btnAddContact.Size = new System.Drawing.Size(75, 23);
+            this.btnAddContact.TabIndex = 11;
+            this.btnAddContact.Text = "button8";
+            this.btnAddContact.UseVisualStyleBackColor = true;
+            // 
+            // lstContacts
+            // 
+            this.lstContacts.FormattingEnabled = true;
+            this.lstContacts.Location = new System.Drawing.Point(445, 199);
+            this.lstContacts.Name = "lstContacts";
+            this.lstContacts.Size = new System.Drawing.Size(310, 95);
+            this.lstContacts.TabIndex = 10;
+            this.lstContacts.SelectedIndexChanged += new System.EventHandler(this.lstContacts_SelectedIndexChanged);
+            // 
+            // btnSaveClientAndContacts
+            // 
+            this.btnSaveClientAndContacts.Location = new System.Drawing.Point(680, 524);
+            this.btnSaveClientAndContacts.Name = "btnSaveClientAndContacts";
+            this.btnSaveClientAndContacts.Size = new System.Drawing.Size(75, 23);
+            this.btnSaveClientAndContacts.TabIndex = 9;
+            this.btnSaveClientAndContacts.Text = "button8";
+            this.btnSaveClientAndContacts.UseVisualStyleBackColor = true;
+            this.btnSaveClientAndContacts.Click += new System.EventHandler(this.btnSaveClientAndContacts_Click);
+            // 
+            // textBox11
+            // 
+            this.textBox11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox11.Location = new System.Drawing.Point(445, 149);
+            this.textBox11.Name = "textBox11";
+            this.textBox11.Size = new System.Drawing.Size(310, 26);
+            this.textBox11.TabIndex = 8;
+            this.textBox11.TextChanged += new System.EventHandler(this.textBox11_TextChanged);
+            // 
+            // txtClientNIF
+            // 
+            this.txtClientNIF.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtClientNIF.Location = new System.Drawing.Point(42, 92);
+            this.txtClientNIF.Name = "txtClientNIF";
+            this.txtClientNIF.Size = new System.Drawing.Size(310, 26);
+            this.txtClientNIF.TabIndex = 7;
+            this.txtClientNIF.Text = "NIF";
+            // 
+            // txtNumeroContato
+            // 
+            this.txtNumeroContato.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNumeroContato.Location = new System.Drawing.Point(445, 92);
+            this.txtNumeroContato.Name = "txtNumeroContato";
+            this.txtNumeroContato.Size = new System.Drawing.Size(310, 26);
+            this.txtNumeroContato.TabIndex = 6;
+            // 
+            // txtClientAddress
+            // 
+            this.txtClientAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtClientAddress.Location = new System.Drawing.Point(42, 149);
+            this.txtClientAddress.Name = "txtClientAddress";
+            this.txtClientAddress.Size = new System.Drawing.Size(310, 26);
+            this.txtClientAddress.TabIndex = 4;
+            this.txtClientAddress.Text = "Rua";
+            // 
+            // txtTipoContato
+            // 
+            this.txtTipoContato.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTipoContato.Location = new System.Drawing.Point(445, 42);
+            this.txtTipoContato.Name = "txtTipoContato";
+            this.txtTipoContato.Size = new System.Drawing.Size(310, 26);
+            this.txtTipoContato.TabIndex = 2;
+            // 
+            // txtClientName
+            // 
+            this.txtClientName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtClientName.Location = new System.Drawing.Point(42, 42);
+            this.txtClientName.Name = "txtClientName";
+            this.txtClientName.Size = new System.Drawing.Size(310, 26);
+            this.txtClientName.TabIndex = 1;
+            this.txtClientName.Text = "Nome";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(42, 333);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(713, 185);
+            this.dataGridView1.TabIndex = 0;
             // 
             // panel2
             // 
@@ -352,90 +442,14 @@
             this.dataGridView5.Size = new System.Drawing.Size(737, 223);
             this.dataGridView5.TabIndex = 0;
             // 
-            // dataGridView1
+            // txtCodPostal
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(42, 333);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(713, 185);
-            this.dataGridView1.TabIndex = 0;
-            // 
-            // txtClientName
-            // 
-            this.txtClientName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtClientName.Location = new System.Drawing.Point(42, 42);
-            this.txtClientName.Name = "txtClientName";
-            this.txtClientName.Size = new System.Drawing.Size(310, 26);
-            this.txtClientName.TabIndex = 1;
-            // 
-            // txtTipoContato
-            // 
-            this.txtTipoContato.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTipoContato.Location = new System.Drawing.Point(445, 42);
-            this.txtTipoContato.Name = "txtTipoContato";
-            this.txtTipoContato.Size = new System.Drawing.Size(310, 26);
-            this.txtTipoContato.TabIndex = 2;
-            // 
-            // txtClientAddress
-            // 
-            this.txtClientAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtClientAddress.Location = new System.Drawing.Point(42, 199);
-            this.txtClientAddress.Name = "txtClientAddress";
-            this.txtClientAddress.Size = new System.Drawing.Size(310, 26);
-            this.txtClientAddress.TabIndex = 4;
-            // 
-            // txtNumeroContato
-            // 
-            this.txtNumeroContato.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNumeroContato.Location = new System.Drawing.Point(445, 92);
-            this.txtNumeroContato.Name = "txtNumeroContato";
-            this.txtNumeroContato.Size = new System.Drawing.Size(310, 26);
-            this.txtNumeroContato.TabIndex = 6;
-            // 
-            // textBox11
-            // 
-            this.textBox11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox11.Location = new System.Drawing.Point(445, 149);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(310, 26);
-            this.textBox11.TabIndex = 8;
-            this.textBox11.TextChanged += new System.EventHandler(this.textBox11_TextChanged);
-            // 
-            // txtClientNIF
-            // 
-            this.txtClientNIF.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtClientNIF.Location = new System.Drawing.Point(42, 120);
-            this.txtClientNIF.Name = "txtClientNIF";
-            this.txtClientNIF.Size = new System.Drawing.Size(310, 26);
-            this.txtClientNIF.TabIndex = 7;
-            // 
-            // btnSaveClientAndContacts
-            // 
-            this.btnSaveClientAndContacts.Location = new System.Drawing.Point(680, 524);
-            this.btnSaveClientAndContacts.Name = "btnSaveClientAndContacts";
-            this.btnSaveClientAndContacts.Size = new System.Drawing.Size(75, 23);
-            this.btnSaveClientAndContacts.TabIndex = 9;
-            this.btnSaveClientAndContacts.Text = "button8";
-            this.btnSaveClientAndContacts.UseVisualStyleBackColor = true;
-            this.btnSaveClientAndContacts.Click += new System.EventHandler(this.btnSaveClientAndContacts_Click);
-            // 
-            // lstContacts
-            // 
-            this.lstContacts.FormattingEnabled = true;
-            this.lstContacts.Location = new System.Drawing.Point(445, 199);
-            this.lstContacts.Name = "lstContacts";
-            this.lstContacts.Size = new System.Drawing.Size(310, 95);
-            this.lstContacts.TabIndex = 10;
-            this.lstContacts.SelectedIndexChanged += new System.EventHandler(this.lstContacts_SelectedIndexChanged);
-            // 
-            // btnAddContact
-            // 
-            this.btnAddContact.Location = new System.Drawing.Point(680, 301);
-            this.btnAddContact.Name = "btnAddContact";
-            this.btnAddContact.Size = new System.Drawing.Size(75, 23);
-            this.btnAddContact.TabIndex = 11;
-            this.btnAddContact.Text = "button8";
-            this.btnAddContact.UseVisualStyleBackColor = true;
+            this.txtCodPostal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCodPostal.Location = new System.Drawing.Point(42, 199);
+            this.txtCodPostal.Name = "txtCodPostal";
+            this.txtCodPostal.Size = new System.Drawing.Size(310, 26);
+            this.txtCodPostal.TabIndex = 12;
+            this.txtCodPostal.Text = "Codigo Postal (4720312)";
             // 
             // Form1
             // 
@@ -454,9 +468,9 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.pictureBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Form1";
@@ -465,6 +479,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
@@ -477,7 +492,6 @@
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -518,6 +532,7 @@
         private System.Windows.Forms.Button btnSaveClientAndContacts;
         private System.Windows.Forms.ListBox lstContacts;
         private System.Windows.Forms.Button btnAddContact;
+        private System.Windows.Forms.TextBox txtCodPostal;
     }
 }
 
