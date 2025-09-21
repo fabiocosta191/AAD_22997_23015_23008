@@ -18,8 +18,8 @@ Repositório para arquivar o projeto de **Armazenamento e Acesso a Dados**
 
 ## Docente  
 
-- **Nome**: Nuno Feixa Rodrigues  
-- **Contato**: [nfr@ipca.pt](mailto:nfr@ipca.pt)  
+- **Nome**: Paulo Adriano Marques Sousa Teixeira   
+- **Contato**: <pteixeira@ipca.pt>
 
 ---
 
@@ -38,10 +38,6 @@ Repositório para arquivar o projeto de **Armazenamento e Acesso a Dados**
 O trabalho tem uma área de referência base, neste caso uma área que envolva o **setor automóvel**, mas dentro da qual podem explorar vários temas, desde que na descrição surja o automóvel.  
 
 O grupo de trabalho poderá sempre contar com a ajuda do docente para esclarecimento de dúvidas ou para resolver outras dificuldades relacionadas com a definição do sistema.  
-
----
-
-## Requisitos da Especificação  
 
 A especificação do problema deverá tirar partido da utilização de todas as potencialidades de um sistema de gestão de base de dados (**pelo menos, 15 a 20 tabelas**).  
 
@@ -71,10 +67,6 @@ A aplicação resultante deverá cumprir os seguintes requisitos:
 
 - Autenticação na aplicação desenvolvida com utilizador e palavra-passe:  
   - A palavra-passe deve estar **encriptada na BD**.  
-
----
-
-## Funcionalidades da Aplicação  
 
 A aplicação deve permitir:  
 - Criar algo  
