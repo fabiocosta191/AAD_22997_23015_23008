@@ -1,0 +1,10 @@
+C:\Users\fabio\Desktop\appaad\AAD_22997_23015_23008\AAD_22997_23015_23008\bin\Debug\AAD_22997_23015_23008.exe.config
+C:\Users\fabio\Desktop\appaad\AAD_22997_23015_23008\AAD_22997_23015_23008\bin\Debug\AAD_22997_23015_23008.exe
+C:\Users\fabio\Desktop\appaad\AAD_22997_23015_23008\AAD_22997_23015_23008\bin\Debug\AAD_22997_23015_23008.pdb
+C:\Users\fabio\Desktop\appaad\AAD_22997_23015_23008\AAD_22997_23015_23008\obj\Debug\AAD_22997_23015_23008.csproj.AssemblyReference.cache
+C:\Users\fabio\Desktop\appaad\AAD_22997_23015_23008\AAD_22997_23015_23008\obj\Debug\AAD_22997_23015_23008.Form1.resources
+C:\Users\fabio\Desktop\appaad\AAD_22997_23015_23008\AAD_22997_23015_23008\obj\Debug\AAD_22997_23015_23008.Properties.Resources.resources
+C:\Users\fabio\Desktop\appaad\AAD_22997_23015_23008\AAD_22997_23015_23008\obj\Debug\AAD_22997_23015_23008.csproj.GenerateResource.cache
+C:\Users\fabio\Desktop\appaad\AAD_22997_23015_23008\AAD_22997_23015_23008\obj\Debug\AAD_22997_23015_23008.csproj.CoreCompileInputs.cache
+C:\Users\fabio\Desktop\appaad\AAD_22997_23015_23008\AAD_22997_23015_23008\obj\Debug\AAD_22997_23015_23008.exe
+C:\Users\fabio\Desktop\appaad\AAD_22997_23015_23008\AAD_22997_23015_23008\obj\Debug\AAD_22997_23015_23008.pdb
